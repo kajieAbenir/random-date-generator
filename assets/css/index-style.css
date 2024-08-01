@@ -1,0 +1,201 @@
+/* font import settings. */
+/* NOTE: font-weight: 0-900 */
+
+/* imports the font from the Google API server. */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* baga nga montserrat, or 'initial' settings for montserrat font. */
+.montserrat-header {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* -------------------------------------- */
+/* general items */
+
+body{
+  background-color: rgb(0, 0, 85);
+}
+
+button {
+  cursor: pointer;
+}
+
+/* -------------------------------------- */
+/* custom */
+
+/* -------------------------------------- */
+/* general settings for the center contents. refer to html file. */
+
+.container {
+  min-height: 100vh; /* set the container height to 100vh */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.center-container{
+
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 30vh;
+
+  padding: 5px;
+  font-size: 16px;
+  width: auto;
+
+  color: white;
+}
+
+/* refers to the input box. */
+#center-options input {
+  width: 450px;
+  padding: 10px;
+  
+  border: none;
+  border-radius: 10px;
+  box-shadow: -2px 2px 5px black;
+
+  background-color: rgb(0, 0, 115);
+  color: white;
+
+  font-size: 20px;
+  font-weight: 500;
+
+  /* transition upon highlight (refer to :focus) */
+  transition: 0.1s ease;
+}
+
+/* 
+  what happens on input box UPON CLICK? 
+  (note: lahi pud tong hover, which i-agi ra ang mouse and not clicking the item.) 
+*/
+#center-options input:focus {
+  outline: none;
+  background-color: rgb(0, 0, 136);
+}
+
+/* button. */
+#submitbtn{
+  width: 100px;
+  padding: 10px;
+  
+  border: 1px solid #ccc;
+  border-radius: 10px;
+
+  background-color: white;
+  color: black;
+
+  font-size: 15px;
+  font-weight: 500;
+
+  box-shadow: -2px 2px 5px black;
+}
+
+#submitbtn:hover{
+  background-color: rgb(228, 228, 228);
+  /*color: white;*/
+}
+
+#submitbtn:active{
+  background-color: rgb(0, 3, 91);
+  color: white;
+  border-color: rgb(0, 3, 91);
+}
+
+.footer {
+  position: fixed; /* Add this line */
+  left: 0;
+  right: 0;
+  bottom: 0; /* Add this line */
+  width: 100%; /* Add this line */
+  background-color: rgb(0, 0, 115);
+  color: #fff;
+  display: flex; /* Add this line */
+  justify-content: center; /* Add this line */
+}
+
+.footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: #ccc;
+}
+
+
+/* -------------------------------------- */
+/* media */
+
+/* if >= 900px ang whole screen area (roughly starting from tablet (portrait) width) */
+@media screen and (max-width: 900px) {
+  .center-container{
+    margin-top: 20vh;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .center-container h1 {
+    max-width: 80%;
+    margin-left: 7vh;
+  }
+}
+
+/* -------------------------------------- */
+/* javascript-based styling */
+
+#result {
+  size: 140%;
+  font-weight: bold;
+}
+
+#result.slide-down {
+  animation: slideDown 1s ease-in-out forwards;
+}
+
+.shake {
+  animation: shake 0.5s;
+}
+
+/* -------------------------------------- */
+/* animations @keyframes */
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(20px);
+  }
+
+  100% {
+    transform: translateY(0px);
+    opacity: 1; /* fade in to opacity 1 */
+  }
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-10px);
+  }
+  40% {
+    transform: translateX(10px);
+  }
+  60% {
+    transform: translateX(-10px);
+  }
+  80% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
